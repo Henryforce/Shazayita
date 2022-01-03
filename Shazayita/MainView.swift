@@ -16,7 +16,18 @@ struct MainView: View {
             
             buildHeader()
 
-            ImageButton(systemName: viewModel.isRecognizingSong ? "waveform.circle.fill" : "waveform.circle")
+            AnimatedImageButton(
+                animationAmount: $viewModel.animationScale,
+                systemName: viewModel.isRecognizingSong ? "waveform.circle.fill" : "waveform.circle"
+            )
+                .padding(.bottom, 8)
+                .onTapGesture {
+                    viewModel.startStopRecognition()
+                }
+            
+            Text(viewModel.isRecognizingSong ? "Listening..." : "Start Listening")
+                .font(.callout)
+                .fontWeight(.medium)
                 .onTapGesture {
                     viewModel.startStopRecognition()
                 }
@@ -39,38 +50,26 @@ struct MainView: View {
                 
                 Text(match.title)
                     .font(.title)
-                    .padding()
+                    .fontWeight(.bold)
+                    .padding(.bottom, 0)
                 
                 if let subtitle = match.subtitle {
                     Text(subtitle)
                         .font(.title3)
-                        .padding()
+                        .fontWeight(.light)
+                        .padding(.bottom, 4)
                 }
                 
                 Text(match.artist)
                     .font(.title2)
-                    .padding()
-            } else {
-                Text("No match yet...")
-                    .font(.title)
+                    .fontWeight(.semibold)
                     .padding()
             }
+//            else {
+//                Text("No match yet...")
+//                    .font(.title)
+//                    .padding()
+//            }
         }
     }
-}
-
-struct ImageButton: View {
-    
-    let systemName: String
-    var backgroundColor = Color.blue
-    var titleColor = Color.yellow
-    
-    var body: some View {
-        Image(systemName: systemName)
-            .font(.title)
-            .foregroundColor(titleColor)
-            .background(backgroundColor)
-            .cornerRadius(16)
-    }
-    
 }

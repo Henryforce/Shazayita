@@ -11,7 +11,10 @@ import AVKit
 
 @MainActor
 final class ViewModel: ObservableObject {
+    
     @Published private(set) var isRecognizingSong = false
+    @Published var animationScale = 0.0
+    
     private(set) var latestMatch: AudioMatch?
     
     private let audioService: AudioService
@@ -31,9 +34,11 @@ final class ViewModel: ObservableObject {
             }
             
             updateRecognizingStatus(true)
-            guard let match = try? await audioService.recognizeAndMatch(from: .microphone) else { return }
-            print(match)
-            latestMatch = match
+            if let match = try? await audioService.recognizeAndMatch(from: .microphone) {
+                print(match)
+                latestMatch = match
+            }
+            // TODO: handle error
             
             updateRecognizingStatus(false)
         }
@@ -41,6 +46,7 @@ final class ViewModel: ObservableObject {
     
     private func updateRecognizingStatus(_ status: Bool) {
         isRecognizingSong = status
+        animationScale = status ? 2.0 : 1.0
     }
 }
 
