@@ -36,3 +36,16 @@ extension AudioMatch {
         self.videoURL = mediaItem.videoURL
     }
 }
+
+extension AudioMatch {
+    static let masterOfPuppets = AudioMatch(
+        shazamID: "66427234",
+        title: "Master of Puppets",
+        subtitle: "Metallica",
+        artist: "Metallica",
+        genres: ["Metal", "Music", "Rock"],
+        webURL: URL(string: "https://www.shazam.com/track/66427234/master-of-puppets?co=SG&offsetInMilliseconds=1414&timeSkew=-0.0023508668&trackLength=515240&startDate=2022-01-03T15:21:37.657Z"),
+        artworkURL: URL(string: "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/7f/9e/4c/7f9e4ccf-7770-525e-4662-f36cbf4956a9/00602557944389.rgb.jpg/800x800bb.jpg"),
+        videoURL: URL(string: "https://music.apple.com/sg/music-video/master-of-puppets/1467912133")
+    )
+}

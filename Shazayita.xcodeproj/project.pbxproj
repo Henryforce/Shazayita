@@ -19,6 +19,7 @@
 		392711E02781FFE1007DABFF /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392711DF2781FFE1007DABFF /* AudioService.swift */; };
 		392711E32782448C007DABFF /* AudioMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392711E22782448C007DABFF /* AudioMatch.swift */; };
 		392711E527824D66007DABFF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392711E427824D66007DABFF /* MainView.swift */; };
+		392711E827836699007DABFF /* AnimatedImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392711E727836699007DABFF /* AnimatedImageButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		392711DF2781FFE1007DABFF /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		392711E22782448C007DABFF /* AudioMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMatch.swift; sourceTree = "<group>"; };
 		392711E427824D66007DABFF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		392711E727836699007DABFF /* AnimatedImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedImageButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,15 +107,16 @@
 		392711AC2781FE38007DABFF /* Shazayita */ = {
 			isa = PBXGroup;
 			children = (
+				392711E627836689007DABFF /* UI */,
 				392711E12782447F007DABFF /* AudioService */,
 				392711AD2781FE38007DABFF /* AppDelegate.swift */,
 				392711AF2781FE38007DABFF /* SceneDelegate.swift */,
 				392711B12781FE38007DABFF /* ViewController.swift */,
+				392711E427824D66007DABFF /* MainView.swift */,
 				392711DD2781FF93007DABFF /* ViewModel.swift */,
 				392711B62781FE38007DABFF /* Assets.xcassets */,
 				392711B82781FE38007DABFF /* LaunchScreen.storyboard */,
 				392711BB2781FE38007DABFF /* Info.plist */,
-				392711E427824D66007DABFF /* MainView.swift */,
 			);
 			path = Shazayita;
 			sourceTree = "<group>";
@@ -142,6 +145,14 @@
 				392711E22782448C007DABFF /* AudioMatch.swift */,
 			);
 			path = AudioService;
+			sourceTree = "<group>";
+		};
+		392711E627836689007DABFF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				392711E727836699007DABFF /* AnimatedImageButton.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +291,7 @@
 				392711E32782448C007DABFF /* AudioMatch.swift in Sources */,
 				392711AE2781FE38007DABFF /* AppDelegate.swift in Sources */,
 				392711DE2781FF93007DABFF /* ViewModel.swift in Sources */,
+				392711E827836699007DABFF /* AnimatedImageButton.swift in Sources */,
 				392711B02781FE38007DABFF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
